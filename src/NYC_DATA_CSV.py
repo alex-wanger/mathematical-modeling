@@ -12,9 +12,11 @@ nyc_df = nyc_df.rename(columns={nyc_col: 'NYC_Price'})
 
 nyc_df['Date'] = pd.to_datetime(nyc_df['Date'], errors='coerce')
 
+# fuckass python uses or
 nyc_2011_df = nyc_df[nyc_df['Date'].dt.year == 2011]
+#nyc_2011_df = nyc_df[(nyc_df['Date'] >= '2011-01-01') & (nyc_df['Date'] < '2013-01-01')]
 
-nyc_2011_df.to_csv("nyc_gas_prices_2011.csv", index=False)
+nyc_2011_df.to_csv("nyc_gas_prices_2011_2012.csv", index=False)
 print("Saved nyc_gas_prices_2011.csv")
 
 plt.figure(figsize=(10,5))
